@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ========================================= -->
+    <!--  TÍTULO DA ABA DO NAVEGADOR               -->
+    <!--  ALTERE AQUI SE QUISER MUDAR O NOME      -->
+    <!-- ========================================= -->
+    <title>Instituto Maurice Hilleman</title>
+
+    <style>
+        /* =======================================================
+           VARIÁVEIS CSS (ALTERE CORES E FONTES AQUI FACILMENTE)
+           ======================================================= */
+        :root {
+            --primary-color: #0a4f8a;      /* Azul principal */
+            --secondary-color: #1976d2;    /* Azul secundário */
+            --light-color: #f4f9ff;        /* Fundo claro */
+            --white: #ffffff;
+            --dark: #1a1a1a;
+            --font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* RESET BÁSICO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-color);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* =======================================================
+           HEADER
+           ======================================================= */
+        header {
+            background: #E1FDFB;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* BOTÃO MENU MOBILE */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* =======================================================
+           HERO SECTION
+           ======================================================= */
+        .hero {
+            background: linear-gradient(rgba(10,79,138,0.85), rgba(10,79,138,0.85));
+            color: var(--white);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        /* ALTERE AQUI O TEXTO PRINCIPAL */
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* =======================================================
+           SEÇÃO SOBRE
+           ======================================================= */
+        .about {
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        /* ALTERE O TEXTO SOBRE AQUI */
+        .about h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        /* =======================================================
+           SEÇÃO SERVIÇOS
+           ======================================================= */
+        .services {
+            padding: 60px 5%;
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .services-grid {
+            display: flex; /* FLEXBOX */
+            gap: 20px;
+            flex-wrap: wrap; /* QUEBRA AUTOMÁTICA NO MOBILE */
+            justify-content: center;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            flex: 1 1 250px; /* RESPONSIVO AUTOMÁTICO */
+            max-width: 300px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        /* =======================================================
+           FOOTER
+           ======================================================= */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 5%;
+            margin-top: 40px;
+        }
+
+        /* =======================================================
+           RESPONSIVIDADE
+           MEDIA QUERY PARA MOBILE
+           ======================================================= */
+        @media (max-width: 768px) {
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: var(--white);
+                position: absolute;
+                top: 70px;
+                right: 5%;
+                width: 200px;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- =======================================================
+     HEADER
+     ======================================================= -->
+<header>
+    <!-- LOGO PLACEHOLDER - VOCÊ PODE TROCAR POR UMA IMAGEM -->
+    <div><img src="logo_IMH.png" width="24%" alt="Instituto Maurice Hilleman"></div>
+
+    <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="menu">
+            <!-- ALTERE OS LINKS AQUI -->
+            <li><a href="#home">Início</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- =======================================================
+     HERO
+     ======================================================= -->
+<section class="hero" id="home">
+    <h1>Bem-vindo ao Instituto Maurice Hilleman</h1>
+    <p>Cuidando da sua saúde com excelência, ética e inovação.</p>
+    <a href="#contact" class="btn">Agendar Consulta</a>
+</section>
+
+<!-- =======================================================
+     SOBRE
+     ======================================================= -->
+<section class="about" id="about">
+    <h2>Sobre o Instituto Maurice Hilleman</h2>
+    <p>
+        O Instituto Maurice Hilleman é dedicado à promoção da saúde
+        com atendimento humanizado e tecnologia de ponta.
+    </p>
+</section>
+
+<!-- =======================================================
+     SERVIÇOS
+     ======================================================= -->
+<section class="services" id="services">
+    <h2>Nossos Serviços</h2>
+
+    <div class="services-grid">
+        <!-- DUPLIQUE UM BLOCO DESSE PARA ADICIONAR SERVIÇOS -->
+        <div class="service-card">
+            <h3>Clínica Geral</h3>
+            <p>Atendimento médico completo para toda a família.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Exames Preventivos</h3>
+            <p>Diagnósticos precisos com equipamentos modernos.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Vacinação</h3>
+            <p>Programas de imunização seguros e atualizados.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =======================================================
+     FOOTER
+     ======================================================= -->
+<footer id="contact">
+    <!-- IMPORTANTE: NOME DA CLÍNICA NO COPYRIGHT -->
+    <p>© 2026 Instituto Maurice Hilleman. Todos os direitos reservados.</p>
+    <p>Email: contato@institutomauricehilleman.com</p>
+    <p>Telefone: (11) 98724-5016</p>
+</footer>
+
+<!-- =======================================================
+     JAVASCRIPT MÍNIMO (MENU MOBILE)
+     NÃO PRECISA ALTERAR SE NÃO SOUBER JS
+     ======================================================= -->
+<script>
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("active");
+    }
+</script>
+
+</body>
+</html>
